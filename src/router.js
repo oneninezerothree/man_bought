@@ -1,12 +1,16 @@
 import React from 'react';
 import { Router, Route, Switch } from 'dva/router';
-import IndexPage from './routes/IndexPage';
+// 登录页
+import LoginPage from './routes/LoginPage';
+// 注册页
+import RegisterPage from './routes/RegisterPage';
 
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
       <Switch>
-        <Route path="/" exact component={IndexPage} />
+        <Route path="/login" exact component={LoginPage} />
+        <Route path="/Register" exact component={RegisterPage} />
       </Switch>
     </Router>
   );

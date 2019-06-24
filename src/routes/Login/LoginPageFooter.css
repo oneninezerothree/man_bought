@@ -1,0 +1,55 @@
+.jointLogin {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+.jointLogin h2 {
+    height: 1.1rem;
+    border-bottom: solid #CCC 0.05rem;
+}
+.jointLogin h2 span {
+    display: inline-block;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    padding: 0 1rem;
+    background-color: #f5f5f5;
+    color: #666;
+    font-size: 0.55rem;
+    -webkit-transform: translate3d(0, 50%, 0);
+    -ms-transform: translate3d(0, 50%, 0);
+    transform: translate3d(0, 50%, 0);
+}
+.jointLogin ul {
+    display: inline-block;
+    width: 10rem;
+    height: 2rem;
+    margin: 1rem auto 0;
+    font-size: 0;
+}
+.jointLogin ul li {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.jointLogin ul li span {
+    display: inline-block;
+    width: 1.85rem;
+    height: 1.85rem;
+    background-color: #FFF;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    border: solid 0.05rem;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.jointLogin ul li .weibo {
+    background-image: url(https://www.nanshig.com/wap/images/sina.png);
+    border-color: #ff5001;
+}
+
+.jointLogin ul li .qq {
+    background-image: url(https://www.nanshig.com/wap/images/qq.png);
+    border-color: #4FC0E8;
+}
+
