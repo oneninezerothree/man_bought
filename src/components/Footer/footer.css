@@ -1,0 +1,66 @@
+footer {
+    display: block;
+    position: relative;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-top: 0.5rem;
+}
+.footnav {
+    min-width: 320px;
+    background: #fff;
+    bottom: 0;
+    font-size: 0.28rem;
+    height: 2.2rem;
+    position: fixed;
+    width: 100%;
+    z-index: 6;
+}
+.clearfix {
+    zoom: 1;
+}
+.footnav ul {
+    font-size: 0;
+}
+.footnav ul li {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 25%;
+    padding: 0.2rem 0 0.2rem 0;
+}
+.footnav ul li a {
+    display: block;
+    position: relative;
+}
+.footnav ul li i {
+    vertical-align: top;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin: 0 auto 0.1rem auto;
+    opacity: 0.5;
+}
+.footnav ul li p {
+    font-size: 0.55rem;
+    color: #888;
+    line-height: 1rem;
+    height: 1rem;
+}
+i.home {
+    background-image: url(../../assets/img/ic_nav_main_home.png);
+    background-size: cover;
+}
+i.categroy {
+    background-image: url(../../assets/img/ic_nav_main_category.png);
+    background-size: cover;
+}
+i.cart {
+    background-image: url(../../assets/img/ic_nav_main_cart.png);
+    background-size: cover;
+}
+i.member {
+    background-image: url(../../assets/img/ic_nav_main_mine.png);
+    background-size: cover;
+}
