@@ -1,0 +1,273 @@
+.nctouchMainLayout {
+  display: block;
+  margin-top: 2rem;
+  background-color: #f5f5f5;
+}
+#cartListWp {
+  margin-bottom: 2.5rem;
+}
+.nctouchCartContainer {
+  display: block;
+  clear: both;
+  background-color: #fff;
+  margin-bottom: 0.5rem;
+  border: solid #eee;
+  border-width: 0.05rem;
+}
+.nctouchCartBottom {
+  position: fixed;
+  z-index: 1;
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-top: solid 0.05rem #eee;
+}
+.nctouchCartStore {
+  display: block;
+  border-bottom: solid 0.05rem #eee;
+}
+.nctouchCartItem {
+  background-color: #fff;
+  border-bottom: solid 0.05rem #eee;
+}
+.nctouchCartStore dt {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 0.9rem;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  line-height: 0.9rem;
+}
+.nctouchCartStore dt .storeCheck {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 0.2rem;
+}
+.nctouchCartStore dt i.iconStore {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.9rem;
+  margin-right: 0.2rem;
+  vertical-align: middle;
+  background: url(https://www.nanshig.com/wap/images/store_b.png) no-repeat 50%
+    50%;
+  background-size: 90%;
+  opacity: 0.8;
+}
+.nctouchCartItem li {
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin-left: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: solid #eee 0.05rem;
+}
+.nctouchCartItem li:last-child {
+  border: none;
+}
+.nctouchCartItem li .goodsCheck {
+  position: absolute;
+  top: 1.2rem;
+}
+.nctouchCartItem li .goodsPic {
+  display: block;
+  width: 2.7rem;
+  height: 2.7rem;
+  padding: 0.2rem;
+  position: absolute;
+  z-index: 1;
+  top: 0.5rem;
+  left: 1.1rem;
+  border: solid 0.05rem #eee;
+  border-radius: 0.2rem;
+}
+.nctouchCartItem li .goodsPic a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.nctouchCartItem li .goodsPic a img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.2rem;
+}
+.nctouchCartItem li .goodsInfo {
+  display: block;
+  height: 2.2rem;
+  margin: 0 2rem 0 4.5rem;
+  position: relative;
+  z-index: 1;
+}
+.nctouchCartItem li .goodsInfo dt.goodsName {
+  display: block;
+}
+.nctouchCartItem li .goodsInfo dt.goodsName a {
+  display: block;
+  height: 1.4rem;
+  font-size: 0.6rem;
+  color: #111;
+  line-height: 0.7rem;
+  overflow: hidden;
+}
+.nctouchCartItem li .goodsDel {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0.3rem;
+  right: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+}
+.nctouchCartItem li .goodsDel span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://www.nanshig.com/wap/images/del_b.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 60%;
+  opacity: 0.4;
+}
+.nctouchCartItem li .goodsSubtotal {
+  display: block;
+  height: 1rem;
+  margin: 0 0.5rem 0 4.5rem;
+  line-height: 1rem;
+  font-size: 0.6rem;
+  position: relative;
+  z-index: 1;
+}
+.nctouchCartItem li .goodsSubtotal .goodsPrice {
+  color: #db4453;
+  font-size: 0.55rem;
+  font-weight: 600;
+}
+.nctouchCartItem li .goodsSubtotal .goodsPrice em {
+  font-size: 0.6rem;
+}
+.nctouchCartItem li .goodsSubtotal .goodsSale {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 0.1rem;
+}
+.valueBox {
+  float: right;
+  font-size: 0;
+  border: solid 0.05rem #ccc;
+  border-radius: 0.2rem;
+}
+.nctouchCartItem li .valueBox {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+}
+.valueBox span {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 0;
+}
+.valueBox span.minus {
+  background-color: #fafafa;
+  border-radius: 0.2rem 0 0 0.2rem;
+}
+.valueBox span.add {
+  background-color: #fafafa;
+  border-radius: 0 0.2rem 0.2rem 0;
+}
+.valueBox span a {
+  display: block;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin: 0.4rem;
+  opacity: 0.65;
+}
+.valueBox span .buyNum {
+  width: 1.2rem;
+  height: 1.2rem;
+  padding: 0;
+  font-size: 0.6rem;
+  font-weight: lighter;
+  line-height: 1.3rem;
+  text-align: center;
+  border: solid #ccc;
+  border-width: 0 0.05rem;
+  border-radius: 0;
+}
+.valueBox span.add a {
+  background-image: url(https://www.nanshig.com/wap/images/value_add.png);
+  background-repeat: no-repeat;
+  background-repeat: 50% 50%;
+  background-size: 100%;
+}
+
+.valueBox span.minus a {
+  background-image: url(https://www.nanshig.com/wap/images/value_minus.png);
+  background-repeat: no-repeat;
+  background-repeat: 50% 50%;
+  background-size: 100%;
+}
+.nctouchCartBottom {
+  position: fixed;
+  z-index: 1;
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-top: solid 0.05rem #eee;
+}
+.nctouchCartBottom .allCheck {
+  position: absolute;
+  z-index: 1;
+  top: 0.4rem;
+  left: 0.5rem;
+}
+.nctouchCartBottom .total {
+  display: block;
+  float: left;
+  text-align: right;
+  width: 75%;
+}
+.nctouchCartBottom .checkOut {
+  display: block;
+  float: right;
+  width: 25%;
+  height: 2rem;
+  background-color: #bbb;
+}
+.nctouchCartBottom .checkOut.ok {
+  background-color: #ff5001;
+}
+.nctouchCartBottom .totalMoney {
+  height: 1rem;
+  margin-right: 1rem;
+  padding: 0.5rem 0;
+  font-size: 0;
+  line-height: 1rem;
+}
+.nctouchCartBottom .totalMoney dt {
+  display: inline-block;
+  font-size: 0.6rem;
+}
+.nctouchCartBottom .totalMoney dd {
+  display: inline-block;
+  font-size: 0.55rem;
+  color: #db4453;
+  font-weight: 600;
+}
+.nctouchCartBottom .totalMoney dd em {
+  font-size: 0.9rem;
+}
+.nctouchCartBottom .checkOut span {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #fff;
+  line-height: 2rem;
+}

@@ -6,7 +6,8 @@ import CommonHeader from '../components/CommonHeader';
 import LoginPageContent from './Login/LoginPageContent';
 // 登录页尾部
 import LoginPageFooter from './Login/LoginPageFooter';
-
+// 公共弹窗
+import CommonCover from '../components/CommonCover';
 export default connect((state) => {
     return state;
 })(
@@ -14,9 +15,14 @@ export default connect((state) => {
         render() {
             return (
                 <div className="view">
-                    <CommonHeader></CommonHeader>
+                    <CommonHeader params={{
+                        textOne: '登录',
+                        textTwo: '注册',
+                        toPath: '/register'
+                    }}></CommonHeader>
                     <LoginPageContent></LoginPageContent>
                     <LoginPageFooter></LoginPageFooter>
+                    {this.props.example.inputErrorHint ? <CommonCover /> : ''}
                 </div>
             )
         }
