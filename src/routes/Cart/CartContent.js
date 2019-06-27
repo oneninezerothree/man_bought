@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import styles from './CartContent.css'
 import { connect } from "dva";
+import { Link } from 'react-router-dom'
 let ifUpdate = true;
+let allGoodsTotao = 0;
 export default connect(state => {
     return state;
 })(
@@ -33,32 +35,20 @@ export default connect(state => {
         //             }
         //         })
         // }
-
-        shouldComponentUpdate() {
-            if (ifUpdate) {
-                let shopSelectLength = this.state.goodsList.filter((item) => item.selectStatus);
-                // 店铺判定自动全选
-                setTimeout(() => {
-                    let goodsSelectLength = this.state.goodsList[this.state.currentShopIndex].data.filter((item) => item.status);
-                    if (goodsSelectLength.length !== this.state.goodsList[this.state.currentShopIndex].data.length) {
-                        console.log(1)
-                        // this.setState(
-                        //     () => {
-                        //         return {
-                        //              conosole.log(1)
-                        //         }
-                        //     }
-                        // )
-                    } else {
-
-                    }
-                })
-                // 全部判定自动全选
-                if (shopSelectLength.length !== this.state.goodsList.length) {
+        shopAllAutoSelect() {
+            // 店铺判定自动全选
+            setTimeout(() => {
+                let goodsSelectLength = this.state.goodsList[this.state.currentShopIndex].data.filter((item) => item.status);
+                if (goodsSelectLength.length !== this.state.goodsList[this.state.currentShopIndex].data.length) {
                     this.setState(
                         () => {
                             return {
-                                selectAll: false,
+                                goodsList: this.state.goodsList.map((item, index) => {
+                                    if (index === this.state.currentShopIndex) {
+                                        item.selectStatus = false;
+                                    }
+                                    return item
+                                })
                             }
                         }
                     )
@@ -66,12 +56,47 @@ export default connect(state => {
                     this.setState(
                         () => {
                             return {
-                                selectAll: true,
+                                goodsList: this.state.goodsList.map((item, index) => {
+                                    if (index === this.state.currentShopIndex) {
+                                        item.selectStatus = true;
+                                    }
+                                    return item;
+                                })
                             }
                         }
                     )
                 }
-                ifUpdate = false;
+            })
+        }
+        shouldComponentUpdate() {
+            // console.log(this.state.currentShopIndex)
+            if (ifUpdate) {
+                setTimeout(() => {
+                    let shopSelectLength = this.state.goodsList.filter((item) => item.selectStatus === true);
+                    // 全部判定自动全选
+                    if (shopSelectLength.length !== this.state.goodsList.length) {
+                        this.setState(
+                            () => {
+                                return {
+                                    selectAll: false,
+                                }
+                            },
+                            () => {
+                            }
+                        )
+                    } else {
+                        this.setState(
+                            () => {
+                                return {
+                                    selectAll: true,
+                                }
+                            },
+                            () => {
+                            }
+                        )
+                    }
+                    ifUpdate = false;
+                })
             }
             return true;
         }
@@ -103,10 +128,71 @@ export default connect(state => {
                 item.status = boolean;
             })
         }
+        addQuantity(shopIndex, goodsIndex) {
+            this.setState(
+                () => {
+                    return {
+                        goodsList: this.state.goodsList.map((item, index) => {
+                            if (index === shopIndex) {
+                                item.data.map((item, index) => {
+                                    if (index === goodsIndex) {
+                                        item.goodsNum++;
+                                    }
+                                    return item;
+                                })
+                            }
+                            return item;
+                        })
+                    }
+                }
+            )
+        }
 
+        minusQuantity(shopIndex, goodsIndex) {
+            this.setState(
+                () => {
+                    return {
+                        goodsList: this.state.goodsList.map((item, index) => {
+                            if (index === shopIndex) {
+                                item.data.map((item, index) => {
+                                    if (index === goodsIndex && item.goodsNum > 1) {
+                                        item.goodsNum--;
+                                    }
+                                    return item;
+                                })
+                            }
+                            return item;
+                        })
+                    }
+                }
+            )
+        }
+
+        confirmDelete() {
+            this.setState(
+                () => {
+                    return {
+                        goodsList: this.state.goodsList.filter((item, index) => {
+                            if (this.state.currentShopIndex === index) {
+                                item.data = item.data.filter((item, index) => {
+                                    return index !== this.state.currentGoodsIndex;
+                                })
+                            }
+                            return item.data.length >= 1;
+                        })
+                    }
+                },
+                () => {
+                    if (this.state.goodsList.length >= 1) {
+                        this.refs.cover.style.display = 'none';
+                    }
+                }
+            )
+        }
         render() {
+            allGoodsTotao = 0;
             return (
-                <div className={styles.nctouchMainLayout} >
+                this.state.goodsList.length > 0 ? <div className={styles.nctouchMainLayout} >
                     <div id={styles.cartListWp}>
                         {
                             this.state.goodsList.map((item, index) => {
@@ -123,13 +209,15 @@ export default connect(state => {
                                                         () => {
                                                             this.changeIfUpdate();
                                                             item.selectStatus = !item.selectStatus;
-                                                            this.setState(
-                                                                () => {
-                                                                    return {
-                                                                        currentShopIndex: index,
+                                                            setTimeout(() => {
+                                                                this.setState(
+                                                                    () => {
+                                                                        return {
+                                                                            currentShopIndex: index,
+                                                                        }
                                                                     }
-                                                                }
-                                                            )
+                                                                )
+                                                            })
                                                             this.shopAllSelect(index, item.selectStatus);
                                                         }
                                                     }
@@ -142,6 +230,11 @@ export default connect(state => {
                                     <ul className={styles.nctouchCartItem}>
                                         {
                                             item.data.map((itemOne, indexOne) => {
+                                                let goodsTotal = 0;
+                                                if (itemOne.status === true) {
+                                                    goodsTotal += Number(itemOne.goodsPrice) * itemOne.goodsNum
+                                                    allGoodsTotao += goodsTotal;
+                                                }
                                                 return <li className={styles.cartLitemwCnt} key={indexOne} ref="goodsLength">
                                                     <div className={styles.goodsCheck}>
                                                         <input
@@ -152,6 +245,7 @@ export default connect(state => {
                                                             onClick={
                                                                 () => {
                                                                     this.changeIfUpdate();
+                                                                    this.shopAllAutoSelect();
                                                                     itemOne.status = !itemOne.status;
                                                                     this.setState(
                                                                         () => {
@@ -184,7 +278,15 @@ export default connect(state => {
                                                         <dd className={styles.goodsType} />
                                                     </dl>
                                                     <div className={styles.goodsDel}>
-                                                        <span></span>
+                                                        <span onClick={
+                                                            () => {
+                                                                this.setState({
+                                                                    currentShopIndex: index,
+                                                                    currentGoodsIndex: indexOne
+                                                                })
+                                                                this.refs.cover.style.display = 'block';
+                                                            }
+                                                        }></span>
                                                     </div>
                                                     <div className={styles.goodsSubtotal}>
                                                         {" "}
@@ -193,7 +295,7 @@ export default connect(state => {
                                                         </span>
                                                         <span className={styles.goodsSale} />
                                                         <div className={styles.valueBox}>
-                                                            <span className={styles.minus}>
+                                                            <span onClick={this.minusQuantity.bind(this, index, indexOne)} className={styles.minus}>
                                                                 <a>&nbsp;</a>
                                                             </span>
                                                             <span>
@@ -201,11 +303,13 @@ export default connect(state => {
                                                                     type="text"
                                                                     readOnly
                                                                     pattern="[0-9]*"
-                                                                    className={`${styles.buyNum} ${styles.buynum}`}
-                                                                    defaultValue={itemOne.goodsNum}
+                                                                    className={`${styles.buyNum}`}
+                                                                    value={itemOne.goodsNum}
                                                                 />
                                                             </span>
-                                                            <span className={styles.add}>
+                                                            <span onClick={() => {
+                                                                this.addQuantity(index, indexOne);
+                                                            }} className={styles.add}>
                                                                 <a>&nbsp;</a>
                                                             </span>
                                                         </div>
@@ -245,7 +349,7 @@ export default connect(state => {
                                 <dl className={styles.totalMoney}>
                                     <dt>合计总金额：</dt>
                                     <dd>
-                                        ￥<em>334.00</em>
+                                        ￥<em>{allGoodsTotao}</em>
                                     </dd>
                                 </dl>
                             </div>
@@ -254,7 +358,37 @@ export default connect(state => {
                             </div>
                         </div>
                     </div>
+                    <div className={styles.sDialogWrapper} ref="cover" style={{
+                        display: 'none'
+                    }}>
+                        <div className={styles.sDialogMask} style={{
+                            height: '934px'
+                        }}></div>
+                        <div style={{
+                            left: '50%',
+                            top: '368px',
+                            marginLeft: '-126.5px'
+                        }} className={`${styles.sDialogWrapper} ${styles.sDialogSkinRed}`}>
+                            <div className={styles.sDialogContent}>确认删除吗？</div>
+                            <div className={styles.sDialogBtnWrapper}>
+                                <span onClick={this.confirmDelete.bind(this)} className="s-dialog-btn-ok">确定</span>
+                                <span onClick={
+                                    () => {
+                                        this.refs.cover.style.display = 'none';
+                                    }
+                                } className="s-dialog-btn-cancel">取消</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                    : <div className={`${styles.nctouchNorecord} ${styles.cart}`}>
+                        <div className={styles.norecordIco}><i></i></div>
+                        <dl>
+                            <dt>您的购物车还是空的</dt>
+                            <dd>去挑一些中意的商品吧</dd>
+                        </dl>
+                        <Link to="/" className={styles.btn}>随便逛逛</Link>
+                    </div>
             );
         }
     }

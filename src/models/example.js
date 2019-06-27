@@ -28,6 +28,14 @@ export default {
             'imgUrl': 'https://www.nanshig.com/data/upload/shop/store/goods/45/45_05923383295317790_240.jpg',
             'status': true
           },
+          {
+            'id': 3,
+            'goodsName': ' 男士卫衣连帽春秋款青少年学生秋装韩版潮流长袖T恤帅秋季上衣服 黑色 M',
+            'goodsPrice': '89.00',
+            'goodsNum': 1,
+            'imgUrl': 'https://www.nanshig.com/data/upload/shop/store/goods/45/45_05923383295317790_240.jpg',
+            'status': true
+          },
         ]
       },
       {
