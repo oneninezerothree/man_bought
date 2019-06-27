@@ -190,6 +190,7 @@ export default connect(state => {
             )
         }
         render() {
+            sessionStorage.setItem('cartData', JSON.stringify(this.state.goodsList));
             allGoodsTotao = 0;
             return (
                 this.state.goodsList.length > 0 ? <div className={styles.nctouchMainLayout} >
