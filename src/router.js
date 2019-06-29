@@ -9,6 +9,8 @@ import Home from '../src/routes/Home/Home'
 import Search from '../src/routes/Search/Search'
 import Mine from '../src/routes/Mine/Mine'
 
+// 购物车页
+import ShoppingCart from './routes/ShoppingCart';
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
@@ -18,6 +20,8 @@ function RouterConfig({ history }) {
         <Route path="/" exact component={Home} />
         <Route path="/search" exact component={Search} />
         <Route path="/mine" exact component={Mine} />
+        <Route path="/register" exact component={RegisterPage} />
+        <Route path="/cart" exact component={ShoppingCart} />
       </Switch>
     </Router>
   );

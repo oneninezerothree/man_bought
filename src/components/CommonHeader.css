@@ -1,86 +1,224 @@
 .Rheader {
-    background: #ff5001;
-    height: 1.95rem;
-    position: absolute;
-    z-index: 8;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: auto;
-    /* border-bottom: solid 0.05rem #EEE; */
+  background: #ff5001;
+  height: 1.95rem;
+  position: absolute;
+  z-index: 8;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  /* border-bottom: solid 0.05rem #EEE; */
 }
 
 .headerWrap {
-    display: block;
-    max-width: 320px;
-    max-width: 640px;
-    margin: 0 auto;
-    text-align: center;
+  display: block;
+  max-width: 320px;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .headerL {
-    display: block;
-    width: 1.95rem;
-    height: 1.95rem;
-    position: absolute;
-    top: 0;
-    left: 0;
+  display: block;
+  width: 1.95rem;
+  height: 1.95rem;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .headerL a {
-    position: relative;
-    z-index: 1;
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    padding: 0.4775rem;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  padding: 0.4775rem;
 }
 
 .headerL a i {
-    display: block;
-    width: 100%;
-    height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .headerL a i.home {
-    width: 80%;
-    height: 80%;
-    margin: 10%;
-    background-image: url(https://www.nanshig.com/wap/images/home_b.png);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 90%;
-    opacity: 0.7;
+  width: 80%;
+  height: 80%;
+  margin: 10%;
+  background-image: url(https://www.nanshig.com/wap/images/home_b.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 90%;
+  opacity: 0.7;
 }
 
 .headerTitle {
-    display: inline-block;
-    margin: 0 auto;
+  display: inline-block;
+  margin: 0 auto;
 }
+
 .headerTitle h1 {
-    font-size: 0.8rem;
-    line-height: 1.95rem;
-    height: 1.95rem;
-    color: #fff;
+  font-size: 0.8rem;
+  line-height: 1.95rem;
+  height: 1.95rem;
+  color: #fff;
 }
+
 .headerR {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    font-size: 0;
-    text-align: right;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  font-size: 0;
+  text-align: right;
 }
 
 .headerR a.text {
-    position: relative;
-    z-index: 1;
-    display: inline-block;
-    white-space: nowrap;
-    width: 1.6rem;
-    height: 0.95rem;
-    padding: 0.6rem 0.7rem 0.4rem 0;
-    font-size: 0.7rem;
-    line-height: 0.975rem;
-    color: #fff;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  white-space: nowrap;
+  width: 1.6rem;
+  height: 0.95rem;
+  padding: 0.6rem 0.7rem 0.4rem 0;
+  font-size: 0.7rem;
+  line-height: 0.975rem;
+  color: #fff;
+}
+.headerR span {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  vertical-align: top;
+  width: 0.95rem;
+  height: 0.95rem;
+  padding: 0.5rem 0.5rem;
+}
+.headerR span i {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.headerR span i.more {
+  background-image: url(https://www.nanshig.com/wap/images/more_b.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100%;
+  opacity: 0.65;
+}
+.headerR span sup {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 0.3rem;
+  right: 0.3rem;
+  width: 0.36rem;
+  height: 0.36rem;
+  background-color: #ff5001;
+  border-radius: 100%;
+}
+.headerL a i.back {
+  width: 80%;
+  height: 80%;
+  margin: 10%;
+  background-image: url(https://www.nanshig.com/wap/images/arrow_left_b.png);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 0.75;
+}
+.nctouchNavLayout {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+}
+
+.show {
+  display: block !important;
+}
+
+.nctouchNavMenu {
+  display: block;
+  position: absolute;
+  top: 1.2rem;
+  right: 0.2rem;
+  width: 5rem;
+}
+
+.nctouchNavMenu .arrow {
+  display: block;
+  float: right;
+  width: 0;
+  height: 0;
+  margin-right: 0.4rem;
+  font-size: 0;
+  line-height: 0;
+  border-width: 0.4rem;
+  border-color: transparent transparent rgba(85, 85, 85, 0.95) transparent;
+  border-style: dashed dashed solid dashed;
+}
+
+.nctouchNavMenu ul {
+  display: block;
+  clear: both;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#F2555555', endColorstr='#F2555555');
+  background: rgba(85, 85, 85, 0.95);
+  border-radius: 0.2rem;
+}
+
+.nctouchNavMenu li {
+  position: relative;
+  z-index: 1;
+  border-bottom: solid 0.05rem #999;
+}
+
+.nctouchNavMenu li a {
+  display: block;
+  height: 0.9rem;
+  padding: 0.5rem;
+  font-size: 0.6rem;
+  line-height: 0.9rem;
+  color: #fff;
+}
+
+.nctouchNavMenu li a i {
+  display: inline-block;
+  width: 0.72rem;
+  height: 0.72rem;
+  vertical-align: middle;
+  margin-right: 0.3rem;
+  background-position: 50% 50%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.nctouchNavMenu li a i.home {
+  background-image: url(https://www.nanshig.com/wap/images/home_w.png);
+}
+
+.nctouchNavMenu li a i.search {
+  background-image: url(https://www.nanshig.com/wap/images/search_w.png);
+}
+
+.nctouchNavMenu li a i.categroy {
+  background-image: url(https://www.nanshig.com/wap/images/categroy_w.png);
+}
+
+.nctouchNavMenu li a i.message {
+  background-image: url(https://www.nanshig.com/wap/images/message_w.png);
+}
+
+.nctouchNavMenu li a i.member {
+  background-image: url(https://www.nanshig.com/wap/images/member_w.png);
+}
+
+header.fixed {
+  position: fixed;
+  background: #ff5001;
+  z-index: 9;
 }

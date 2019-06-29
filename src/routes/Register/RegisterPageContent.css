@@ -1,0 +1,164 @@
+.nctouchInpCon {
+    display: block;
+    clear: both;
+    margin-top: 2rem;
+}
+
+.nctouchInpCon ul {
+    background: #FFF;
+}
+
+.nctouchInpCon ul li {
+    position: relative;
+    z-index: 1;
+    display: block;
+    min-height: 1.95rem;
+    margin-left: 0.5rem;
+    background-color: #FFF;
+    border-bottom: solid #EEE 0.05rem;
+}
+
+.nctouchInpCon ul li h4 {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 3rem;
+    font-size: 0.6rem;
+    line-height: 1.95rem;
+    color: #444;
+    text-align: right;
+}
+
+.nctouchInpCon ul li .inputBox {
+    display: block;
+    height: 1.95rem;
+    margin: 0 0.5rem 0 3.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.nctouchInpCon ul li .inputBox .inp {
+    width: 100%;
+    min-height: 0.95rem;
+    padding: 0.5rem 0;
+    border: 0 none;
+    font-size: 0.6rem;
+    line-height: 0.95rem;
+    color: #000;
+}
+
+.nctouchInpCon ul li .inputBox .inputDel {
+    position: absolute;
+    z-index: 1;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: none;
+    width: 0.975rem;
+    height: 0.975rem;
+    background-image: url(https://www.nanshig.com/wap/images/cancel_b.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 60%;
+    opacity: 0.4;
+}
+
+.formItem .inputBox .inputDel.code {
+    right: 6rem;
+}
+
+.formItem .inputBox .codeImg {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.3rem;
+    z-index: 1;
+    width: 4rem;
+    height: 1.4rem;
+    text-align:center;
+    line-height: 1.4rem;
+}
+
+.formItem .inputBox .codeImg span {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background: #eee;
+}
+
+.rememberForm {
+    height: 0.9rem;
+    margin: 1rem 2rem 0 2rem;
+    position: relative;
+}
+
+.rememberForminput[type="checkbox"]:checked {
+    border-color: #48CFAE;
+    background-color: #48CFAE;
+}
+
+.rememberForminput[type="checkbox"] {
+    margin-top: -0.2rem;
+}
+
+.rememberForm label {
+    display: inline-block;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    font-size: 0.6rem;
+    color: #666;
+    vertical-align: top;
+}
+
+.rememberForm .regCms {
+    line-height: 0.9rem;
+    font-size: 0.6rem;
+    vertical-align: top;
+    display: inline-block;
+    height: 0.9rem;
+    color: #5D9CEC;
+}
+
+.rememberForm .regCms:visited {
+    color: #4B89DC;
+}
+
+
+
+.nctouchInpCon .formBtn {
+    margin-top: 1rem;
+}
+
+.nctouchInpCon .formBtn .btn {
+    display: inline-block;
+    width: 90%;
+    height: 1.8rem;
+    padding: 0;
+    margin: 0 5%;
+    font-size: 0.8rem;
+    line-height: 1.8rem;
+    text-align: center;
+    color: #888;
+    background: #EEE;
+    border: none;
+    border-radius: 0.2rem;
+}
+
+.btn {
+    vertical-align: top;
+    display: inline-block !important;
+    height: 1.1rem;
+    padding: 0 0.3rem;
+    margin: 0 auto;
+    font-size: 0.6rem;
+    color: #555 !important;
+    line-height: 1.1rem;
+    text-align: center;
+    background-color: #FFF;
+    border: solid 1px #CCC;
+    border-radius: 0.15rem;
+}
+
+.nctouchInpCon .formBtn.ok .btn {
+    color: #FFF !important;
+    background: #ff5001;
+}
