@@ -1,5 +1,6 @@
 import React from 'react';
 import { Router, Route, Switch } from 'dva/router';
+import { connect } from 'dva';
 // 登录页
 import LoginPage from './routes/LoginPage';
 // 注册页

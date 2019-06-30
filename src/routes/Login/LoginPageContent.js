@@ -44,7 +44,7 @@ export default withRouter(connect((state) => {
 
     // 点击登录
     async LoginFunction() {
-        const requestData = await axios.get(`http://localhost:3000/mongodb/login?username=${this.state.username}&password=${this.state.password}`)
+        const requestData = await axios.get(`http://120.79.238.129:3000/mongodb/login?username=${this.state.username}&password=${this.state.password}`)
 
         // 非空
         if (this.state.username !== '' && this.state.password !== '') {

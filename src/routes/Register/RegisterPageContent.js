@@ -207,7 +207,7 @@ export default withRouter(connect((state) => {
                         }
                     })
                 } else {
-                    const responseData = await axios.get(`http://localhost:3000/mongodb/register?username=${this.state.telephone}&password=${this.state.password}`);
+                    const responseData = await axios.get(`http://120.79.238.129:3000/mongodb/register?username=${this.state.telephone}&password=${this.state.password}`);
                     if (responseData.data.status) {
                         this.props.dispatch({
                             type: 'example/save',
