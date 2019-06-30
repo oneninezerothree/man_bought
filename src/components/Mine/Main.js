@@ -1,9 +1,11 @@
 import React from 'react'
 import styles from './mine.css'
 import {withRouter , Link} from 'react-router-dom'
+import Cookie from 'js-cookie'
 
 class Main extends React.Component {
     render() {
+        const username1 = Cookie.get('uesrname')
         return (
             <div className={styles.scrollerBody}>
                 <div className={styles.scrollerBox}>
@@ -12,7 +14,7 @@ class Main extends React.Component {
                             <a className={styles.defaultAvatar} style={{display:'block'}}></a>
                             <Link to={{
                                 pathname : '/login',
-                            }} className={styles.toLogin} >点击登录</Link>
+                            }} className={styles.toLogin} >{username1?username1:'点击登录'}</Link>
                         </div>
                         <div className={styles.memberCollect}>
                             <span><a><i className={styles.favoriteGoods}></i><p>商品收藏</p></a></span>
