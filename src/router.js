@@ -9,7 +9,9 @@ import RegisterPage from './routes/RegisterPage';
 import Home from '../src/routes/Home/Home'
 import Search from '../src/routes/Search/Search'
 import Mine from '../src/routes/Mine/Mine'
-
+import Detail from './routes/Detail/Detail';
+import Category from './routes/Category/Category';
+import Lists from './routes/Lists/Lists';
 // 购物车页
 import ShoppingCart from './routes/ShoppingCart';
 function RouterConfig({ history }) {
@@ -23,6 +25,9 @@ function RouterConfig({ history }) {
         <Route path="/mine" exact component={Mine} />
         <Route path="/register" exact component={RegisterPage} />
         <Route path="/cart" exact component={ShoppingCart} />
+        <Route path="/detail" component={Detail} />
+        <Route path="/category" exact component={Category} />
+        <Route path="/lists" exact component={Lists} />
       </Switch>
     </Router>
   );

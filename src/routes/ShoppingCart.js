@@ -7,6 +7,18 @@ import CartContent from './Cart/CartContent';
 export default connect((state) => {
     return state;
 })(class ShoppingCart extends Component {
+    componentDidMount() {
+        console.log(JSON.parse(sessionStorage.getItem('cartData')))
+        this.props.dispatch({
+            type: 'example/save',
+            payload: {
+                goodsList: JSON.parse(sessionStorage.getItem('cartData'))
+            }
+        })
+        setTimeout(() => {
+            console.log(this.props.example);
+        })
+    }
     render() {
         return (
             <div className="view">

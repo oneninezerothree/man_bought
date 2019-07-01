@@ -1,0 +1,83 @@
+.categroylist{
+   // background: red;
+   // height: 40px;
+   line-height: 40px;
+   .title{
+      display: flex;
+      flex-direction: row;
+      justify-content:space-between;
+      line-height: 40px;
+      *{line-height: 20px;vertical-align:middle}
+      .name{
+         padding-top: 10px;
+         padding-left: 20px;
+      }
+      .icon{
+         padding-top: 10px;
+         padding-right: 10px;
+      }
+   }
+   .upperwear{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      // justify-content:space-around;
+      padding:10px;
+      li{
+         font-size: 14px;
+         width: 22%;
+         flex-grow: 0;
+         // flex-shrink: 1;
+         height: 100px;
+         // background-color: aqua;
+         margin-bottom: 20px;
+         padding:5px;
+         img{
+            width: 100%;
+            height: 80px;
+            display: block;
+            background-color: wheat;
+         }
+         div{
+            text-align: center;
+         }
+
+      }
+   } 
+}
+.recommend{
+   // height: 40px;
+   line-height: 26px;
+   .title{
+      h3{}
+   }
+   .recommendlist{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      // justify-content:space-around;
+      // padding:10px;
+      font-size: 16px;
+      li{
+         width: 47%;
+         flex-grow: 0;
+         // flex-shrink: 1;
+         height: 160px;
+         // background-color: aqua;
+         margin-bottom: 20px;
+         padding:5px;
+         img{
+            width: 100%;
+            height: 100px;
+            display: block;
+            background-color: wheat;
+         }
+         .head{
+            white-space: nowrap;
+            padding-right: 10px;
+            overflow: hidden; 
+            text-overflow:ellipsis;
+         }
+      }
+   }
+}

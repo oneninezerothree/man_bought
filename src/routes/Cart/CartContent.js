@@ -11,7 +11,7 @@ export default connect(state => {
         constructor(props) {
             super(props)
             this.state = {
-                goodsList: this.props.example.goodsList,
+                goodsList: [],
                 newGoodsList: [],
                 currentShopIndex: null,
                 currentGoodsIndex: null,
@@ -21,20 +21,32 @@ export default connect(state => {
             }
         }
         // 更改旧数组数据
-        // componentDidMount() {
-        //     const newGoodsList = this.state.goodsList.map((item) => {
-        //         return item.data.map((item) => {
-        //             item.status = true;
-        //             return item;
-        //         });
-        //     })
-        //     this.setState(
-        //         () => {
-        //             return {
-        //                 newGoodsList: newGoodsList,
-        //             }
-        //         })
-        // }
+        componentDidMount() {
+            setTimeout(() => {
+                this.setState(
+                    () => {
+                        return {
+                            goodsList: this.props.example.goodsList,
+                        }
+                    },
+                    () => {
+                        console.log(this.state.goodsList);
+                    }
+                )
+            })
+            // const newGoodsList = this.state.goodsList.map((item) => {
+            //     return item.data.map((item) => {
+            //         item.status = true;
+            //         return item;
+            //     });
+            // })
+            // this.setState(
+            //     () => {
+            //         return {
+            //             newGoodsList: newGoodsList,
+            //         }
+            //     })
+        }
         shopAllAutoSelect() {
             // 店铺判定自动全选
             setTimeout(() => {
@@ -146,6 +158,9 @@ export default connect(state => {
                     }
                 }
             )
+            setTimeout(() => {
+                sessionStorage.setItem('cartData', JSON.stringify(this.state.goodsList));
+            })
         }
 
         minusQuantity(shopIndex, goodsIndex) {
@@ -166,6 +181,9 @@ export default connect(state => {
                     }
                 }
             )
+            setTimeout(() => {
+                sessionStorage.setItem('cartData', JSON.stringify(this.state.goodsList));
+            })
         }
 
         confirmDelete() {
@@ -188,9 +206,11 @@ export default connect(state => {
                     }
                 }
             )
+            setTimeout(() => {
+                sessionStorage.setItem('cartData', JSON.stringify(this.state.goodsList));
+            })
         }
         render() {
-            sessionStorage.setItem('cartData', JSON.stringify(this.state.goodsList));
             allGoodsTotao = 0;
             return (
                 this.state.goodsList.length > 0 ? <div className={styles.nctouchMainLayout} >

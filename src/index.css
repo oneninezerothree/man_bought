@@ -1,3 +1,6 @@
 html, body :global(#root){
     display: block;
 }
+li{list-style: none;}
+*{margin:0;padding:0;box-sizing:border-box;}
+

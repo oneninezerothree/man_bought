@@ -15,7 +15,7 @@ class Footer extends React.Component {
                         ><i className={styles.home}></i><p>首页</p></Link></li>
                         <li><Link
                             to={{
-                                pathname : '/fenlei'
+                                pathname : '/category'
                             }}    
                         ><i className={styles.categroy}></i><p>分类</p></Link></li>
                         <li><Link
