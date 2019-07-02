@@ -18,7 +18,9 @@ class Header extends React.Component{
     }
     render(){
         return(
-            <header id={styles.header}>
+            <header id={styles.header} style={{
+                zIndex: 9999
+            }}>
                 <div className={styles.headerWrap}>
                     <div className={styles.headerL}>
                         <a href="javascript:history.go(-1)">

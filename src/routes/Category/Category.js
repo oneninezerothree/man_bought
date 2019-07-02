@@ -6,7 +6,8 @@ import styles from './Category.scss';
 import axios from 'axios'; 
 //与跳转有关
 import { Link,withRouter } from 'react-router-dom'
-
+import Header from '../../components/Search/Header';
+import Footer from '../../components/Footer/Footer';
 function renderTabBar(props) {
     return (<Sticky>
       {({ style }) => <div style={{ ...style, zIndex: 1 }}><Tabs.DefaultTabBar {...props} /></div>}
@@ -105,8 +106,12 @@ class Category extends Component {
     render() {
         return (
             <div>
+                <Header/>
                 <header style={{
-                    background: 'none'
+                    background: 'none',
+                    position: 'relative',
+                    marginTop: '1.95rem',
+                    zIndex: 1000,
                 }}>
                     <StickyContainer>
                         <Tabs tabs={tabs}  onTabClick={(tab, index) => { this.setState({gc_id:this.state.gc_idArr[tab.key].gc_id}) 
@@ -138,6 +143,7 @@ class Category extends Component {
                         {this.showrecommend()}
                     </ul>
                 </div>
+                <Footer/>
             </div>
         )
     }
